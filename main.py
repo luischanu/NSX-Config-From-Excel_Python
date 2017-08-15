@@ -64,7 +64,6 @@ def excel_to_dict(XLSFile):
 
 
 def main():
-    nsxmgr = NSX_v.NSXManager("SFO-vCenter.Lab.Local", "Administrator@vSphere.Local","Hello123!")
     XLSFilename = "VirtualEnvironment.xlsx"
 
     print_header()
@@ -84,9 +83,9 @@ def main():
 
     #NSX Manager
     nsxmgr = NSX_v.NSXManager(
-        (XLSData["Infrastructure"][0])["vCenterServer"],        # vCenterServer Address
-        (XLSData["Infrastructure"][0])["vCenter_Admin"],        # vCenter Admin Username
-        (XLSData["Infrastructure"][0])["vCenter_Password"]      # vCenter Admin Password
+        (XLSData["Infrastructure"][0])["NSX-Manager"],              # vCenterServer Address
+        (XLSData["Infrastructure"][0])["NSX-Manager_Admin"],        # vCenter Admin Username
+        (XLSData["Infrastructure"][0])["NSX-Manager_Password"]      # vCenter Admin Password
     )
 
     print("NSX Manager: {}".format(nsxmgr))
