@@ -2,7 +2,7 @@
 Module:     NSX_v.py
 Author:     Luis Chanu
 Date:       8/13/2017
-Target:     NSX for vSphere v6.2
+Target:     NSX for vSphere v6.x
 
 Description:
     As an attempt to better learn Python, I'm creating this NSX Class file.  The primary goal of this

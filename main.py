@@ -71,39 +71,24 @@ def main():
     XLSData = excel_to_dict(XLSFilename)
     print(XLSData)
 
-    print("=====================================================================================================================================================================")
-    print(XLSData["Infrastructure"])
-    print("=====================================================================================================================================================================")
-    print(XLSData["Infrastructure"][0])
-    print("=====================================================================================================================================================================")
-    print((XLSData["Infrastructure"][0])["vCenterServer"])
+    print(
+        "=====================================================================================================================================================================")
 
-    print("=====================================================================================================================================================================")
-
-
-    #NSX Manager
+    # NSX Manager
     nsxmgr = NSX_v.NSXManager(
-        (XLSData["Infrastructure"][0])["NSX-Manager"],              # vCenterServer Address
-        (XLSData["Infrastructure"][0])["NSX-Manager_Admin"],        # vCenter Admin Username
-        (XLSData["Infrastructure"][0])["NSX-Manager_Password"]      # vCenter Admin Password
+        (XLSData["Infrastructure"][0])["NSX-Manager"],          # vCenterServer Address
+        (XLSData["Infrastructure"][0])["NSX-Manager_Admin"],    # vCenter Admin Username
+        (XLSData["Infrastructure"][0])["NSX-Manager_Password"]  # vCenter Admin Password
     )
-
-    print("NSX Manager: {}".format(nsxmgr))
-    print("=====================================================================================================================================================================")
-
-
-
 
     tz_list = XLSData["TransportZones"]
     print(f"NSX Manager: {nsxmgr}")
 
-    print("TransportZone List: {}, ObjectID: ".format(tz_list))
+    print("TransportZone List: {}".format(tz_list))
 
     for tz_dict in tz_list:
-        print("TZ Name: {},  TZ ObjectID: {}".format(tz_dict['Name'], NSX_GoGet.transportzone_oid(nsxmgr, tz_dict['Name'])))
-
-
-
+        print("TZ Name: {},  TZ ObjectID: {}".format(tz_dict['Name'],
+                                                     NSX_GoGet.transportzone_oid(nsxmgr, tz_dict['Name'])))
 
 
 if __name__ == "__main__":
