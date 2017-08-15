@@ -11,7 +11,7 @@ def transportzone_oid(NSXManager, tz):
 
     print("URL: {}".format(url))
 
-    r = requests.get(url, headers=headers, auth=auth)
+    r = requests.get(url, headers=headers, auth=auth, verify=False)
 
     if r.status_code != 200:
         print(f"***ERROR: {r.status_code}")
