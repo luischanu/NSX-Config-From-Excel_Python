@@ -14,9 +14,9 @@ def transportzone_oid(NSXManager, tz):
     r = requests.get(url, headers=headers, auth=auth)
 
     if r.status_code != 200:
-        print("***ERROR: {r.status_code}")
+        print(f"***ERROR: {r.status_code}")
     else:
-        print("Text:  {r.text}")
+        print(f"Text:  {r.text}")
 
     # ToDo: Need to figure out how to use xmltodict to convert the r.text xml output to dict so key can be querried.
     object_id = r.text
